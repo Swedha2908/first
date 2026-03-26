@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Swedha S</title>
 
     <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #ccc;
-            color: #333;
+            overflow-x: hidden;
+            /* Prevents side-scrolling during animation */
         }
 
-        /* NAV */
+        /* NAVIGATION */
         nav {
             position: fixed;
             bottom: 30px;
@@ -41,19 +44,28 @@
             border-radius: 20px;
         }
 
-        /* HERO SECTION (Your existing logic) */
+        /* HERO SECTION */
         .hero {
-            height: 120vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             position: relative;
-            position: relative;
-            /* ADD */
             z-index: 10;
-            /* ADD */
         }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
 
         .top {
             position: absolute;
@@ -82,15 +94,9 @@
             height: 480px;
             overflow: hidden;
             border-radius: 20px;
-            background: #ccc;
-            /* Placeholder if image is missing */
-            position: relative;
-            /* ADD */
-            z-index: 999;
+            background: #bbb;
             position: relative;
             z-index: 999;
-            transition: transform 0.15s ease-out;
-
         }
 
         #box img {
@@ -99,19 +105,17 @@
             object-fit: cover;
         }
 
-
-
-        /* SKILLS SECTION - STACKING EFFECT */
+        /* SKILLS SECTION */
         .skills-container {
-            background: white;
+            background: #eaeaea;
             border-radius: 40px 40px 0 0;
             padding: 100px 50px;
             position: relative;
             z-index: 1;
-        
         }
 
         .intro-text {
+            margin-left: 70px;
             max-width: 800px;
             margin-bottom: 80px;
         }
@@ -121,55 +125,60 @@
             margin-bottom: 10px;
         }
 
-        /* The Secret Sauce: Sticky Cards */
+        /* STICKY CARDS */
         .card {
+            margin-left: 70px;
             position: sticky;
             top: 50px;
-            /* How far from the top it stops */
             background: white;
             border: 1px solid #ddd;
             border-radius: 30px;
             padding: 40px;
             margin-bottom: 50px;
-            /* Space for the next card to show behind */
-            height: 200px;
+            height: 230px;
             width: 300px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             gap: 20px;
             box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-
         }
 
         .card h3 {
             font-size: 32px;
             margin: 0;
-            color: black
+            color: black;
         }
-
 
         .card p {
-
             font-size: 18px;
             line-height: 1.6;
-            max-width: 500px;
         }
 
-        /* Offset colors to make them look like the video */
+        /* Card Colors & Offsets */
         .card:nth-child(2) {
             background: #f1f1f1;
             top: 70px;
         }
 
         .card:nth-child(3) {
-            background: #e9e9e9;
+            background: #f1f1f1;
             top: 90px;
         }
 
         .card:nth-child(4) {
-            background: #e2e2e2;
+            background: #f1f1f1;
             top: 110px;
+        }
+
+         .card:nth-child(5) {
+            background: #f1f1f1;
+            top: 130px;
+        }
+
+         .card:nth-child(6) {
+            background: #f1f1f1;
+            top: 150px;
         }
     </style>
 </head>
@@ -177,6 +186,7 @@
 <body>
 
     <nav>
+        <i class="fa-solid fa-house"></i>
         <a href="#">Skills</a>
         <a href="#">About</a>
         <a href="#">Portfolio</a>
@@ -185,6 +195,9 @@
     </nav>
 
     <div class="hero">
+        <video autoplay muted loop class="bg-video">
+            <source src="bgvideo.mp4" type="video/mp4">
+        </video>
         <div class="top">
             <span>Java Full Stack Developer</span>
             <span>Learning & Developing skills</span>
@@ -202,55 +215,62 @@
     <div class="skills-container">
         <div class="intro-text">
             <h2>What I do best?</h2>
-            <p>I build responsive and visually appealing websites using HTML, CSS, and JavaScript. I focus on creating clean layouts that work smoothly across different devices and screen sizes.</p>
+            <p>I build responsive and visually appealing websites using HTML, CSS, and JavaScript. I focus on creating
+                clean layouts that work smoothly across different devices and screen sizes.</p>
         </div>
 
         <div class="card">
-
             <h3>HTML & Semantic Structure</h3>
-            <p>I write clean and well-structured HTML using semantic elements to improve accessibility, readability, and SEO.</p>
+            <p>I write clean and well-structured HTML using semantic elements to improve accessibility, readability, and
+                SEO.</p>
         </div>
 
         <div class="card">
-
             <h3>CSS & Layout Techniques</h3>
-            <p>I use modern CSS methods like Flexbox and Grid to create responsive, flexible, and visually consistent layouts.</p>
+            <p>I use modern CSS methods like Flexbox and Grid to create responsive, flexible, and visually consistent
+                layouts.</p>
         </div>
 
         <div class="card">
-
             <h3>JavaScript & DOM Manipulation</h3>
-            <p>I use JavaScript to add interactivity and dynamic behavior to websites, making them more engaging and user-friendly.</p>
+            <p>I use JavaScript to add interactivity and dynamic behavior to websites, making them more engaging and
+                user-friendly.</p>
         </div>
 
-        <div style="height: 100px;"></div>
+        <div class="card">
+            <h3>Java Programming</h3>
+            <p>Strong foundation in Java for developing scalable applications. Understanding of object-oriented programming, data structures, and backend logic.</p>
+        </div>
+
+        <div class="card">
+            <h3>Version Control (Git)</h3>
+            <p>Using Git for tracking changes, managing code, and collaborating on projects.</p>
+        </div>
+
+        <div style="height: 300px;"></div>
     </div>
 
     <script>
-        let box = document.getElementById("box");
+        const box = document.getElementById("box");
 
         window.addEventListener("scroll", () => {
+            const s = window.scrollY;
+            const stopPoint = 600; // The scroll distance where animation finishes
 
-            let s = window.scrollY;
+            // progress goes from 0 to 1
+            const progress = Math.min(s / stopPoint, 1);
 
-            let stopPoint = 700;   // where it should stop
+            const x = progress * 400;     // horizontal travel
+            const y = progress * 650;     // vertical travel
+            const scale = 1 - (progress * 0.4);
 
-            // Clamp value (prevents jump)
-            let progress = Math.min(s / stopPoint, 1);
+            // Starts at 8 degrees, ends at 0 (straight)
+            const rotate = 8 - (progress * 8);
 
-            // Smooth movement
-            let x = progress * 400;   // move to right
-            let y = progress * 600;   // move into white section
-            let scale = 1 - (progress * 0.4);
-            let rotate = progress * 6;
-
-            box.style.transform =
-                `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotate}deg)`;
-
+            box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotate}deg)`;
         });
     </script>
 
-<h1>hello</h1>
 </body>
 
 </html>
