@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Swedha S</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         body {
@@ -12,7 +13,6 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #ccc;
             overflow-x: hidden;
-            /* Prevents side-scrolling during animation */
         }
 
         /* NAVIGATION */
@@ -66,7 +66,6 @@
             z-index: -1;
         }
 
-
         .top {
             position: absolute;
             top: 25%;
@@ -89,17 +88,49 @@
             gap: 40px;
         }
 
+        /* 3D BOX STYLES */
         #box {
             width: 320px;
             height: 480px;
-            overflow: hidden;
             border-radius: 20px;
-            background: #bbb;
             position: relative;
             z-index: 999;
+            perspective: 1200px;
+            /* Enhanced depth */
+            background: transparent;
         }
 
-        #box img {
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.1s linear;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back {
+            background: #000;
+            transform: rotateY(180deg);
+        }
+
+        .card-back video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -155,7 +186,6 @@
             line-height: 1.6;
         }
 
-        /* Card Colors & Offsets */
         .card:nth-child(2) {
             background: #f1f1f1;
             top: 70px;
@@ -171,14 +201,100 @@
             top: 110px;
         }
 
-         .card:nth-child(5) {
+        .card:nth-child(5) {
             background: #f1f1f1;
             top: 130px;
         }
 
-         .card:nth-child(6) {
+        .card:nth-child(6) {
             background: #f1f1f1;
             top: 150px;
+        }
+
+        .about-section {
+            background: #f3f3f3;
+            padding: 100px 70px;
+        }
+
+        .about-small {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .about-section h2 {
+            margin-left: 70px;
+            font-size: 52px;
+            margin: 0;
+        }
+
+        .orange {
+            color: #f38d31;
+        }
+
+        .about-sub {
+            margin-left: 70px;
+            margin-top: 15px;
+            color: #777;
+            font-size: 18px;
+        }
+
+        .about-desc {
+            margin-left: 70px;
+            margin-top: 20px;
+            max-width: 700px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        .about-last {
+            margin-left: 70px;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .about-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            margin-left: 70px;
+            background: #f38d31;
+            border: none;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .outline-btn {
+            margin-left: 70px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 12px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .stars {
+            margin-left: 70px;
+            margin-top: 30px;
+            color: #f38d31;
+        }
+
+        .trust {
+            margin-left: 70px;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .social {
+            margin-left: 70px;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
         }
     </style>
 </head>
@@ -186,7 +302,7 @@
 <body>
 
     <nav>
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-house" style="color:white;"></i>
         <a href="#">Skills</a>
         <a href="#">About</a>
         <a href="#">Portfolio</a>
@@ -206,7 +322,16 @@
         <div class="row">
             <h1>Portfolio</h1>
             <div id="box">
-                <img src="profile.jpg" alt="Profile">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="profile.jpg" alt="Profile">
+                    </div>
+                    <div class="card-back">
+                        <video autoplay muted loop playsinline>
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
             </div>
             <h1>SWEDHA S</h1>
         </div>
@@ -220,54 +345,81 @@
         </div>
 
         <div class="card">
-            <h3>HTML & Semantic Structure</h3>
-            <p>I write clean and well-structured HTML using semantic elements to improve accessibility, readability, and
-                SEO.</p>
+            <h3>1.HTML & Semantic Structure</h3>
+            <p>Clean and accessible structure.</p>
         </div>
 
         <div class="card">
-            <h3>CSS & Layout Techniques</h3>
-            <p>I use modern CSS methods like Flexbox and Grid to create responsive, flexible, and visually consistent
-                layouts.</p>
+            <h3>2.CSS & Layout Techniques</h3>
+            <p>Responsive designs with Flex and Grid.</p>
         </div>
 
         <div class="card">
-            <h3>JavaScript & DOM Manipulation</h3>
-            <p>I use JavaScript to add interactivity and dynamic behavior to websites, making them more engaging and
-                user-friendly.</p>
-        </div>
-
-        <div class="card">
-            <h3>Java Programming</h3>
-            <p>Strong foundation in Java for developing scalable applications. Understanding of object-oriented programming, data structures, and backend logic.</p>
-        </div>
-
-        <div class="card">
-            <h3>Version Control (Git)</h3>
-            <p>Using Git for tracking changes, managing code, and collaborating on projects.</p>
+            <h3>3.JavaScript & DOM Manipulation</h3>
+            <p>Dynamic and interactive user experiences.</p>
         </div>
 
         <div style="height: 300px;"></div>
     </div>
 
+    <div class="about-section">
+        <div class="about-small">/ About Me</div>
+        <h2><span class="orange">Creative</span> at the Core</h2>
+        <div class="about-sub">Aspiring Developer. Fast Learner. Problem Solver.</div>
+        <p class="about-desc">
+            As a passionate fresher, I bring creativity, adaptability, and a strong willingness to learn.
+            I enjoy building projects that create meaningful impact.
+        </p>
+        <p class="about-last">Ready to learn, build, and make an impact.</p>
+
+        <div class="about-buttons">
+            <button class="primary-btn"><i class="fa-solid fa-calendar"></i> Contact Me</button>
+            <button class="outline-btn">Copy email</button>
+            <button class="outline-btn">Download CV</button>
+        </div>
+
+        <div class="stars">★★★★★</div>
+        <div class="trust">Built 5+ projects</div>
+
+        <div class="social">
+            <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+            <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+            <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="icon"><i class="fa-solid fa-paper-plane"></i></div>
+        </div>
+    </div>
+
     <script>
         const box = document.getElementById("box");
+        const inner = box.querySelector(".card-inner");
 
         window.addEventListener("scroll", () => {
             const s = window.scrollY;
-            const stopPoint = 600; // The scroll distance where animation finishes
+            const stopPoint = 600;
 
-            // progress goes from 0 to 1
+            // Phase 1: Move to initial spot (0 to 1)
             const progress = Math.min(s / stopPoint, 1);
 
-            const x = progress * 400;     // horizontal travel
-            const y = progress * 650;     // vertical travel
+            // Phase 2: Starts after stopPoint (600px). 
+            // Divided by 1200 to make the movement longer/slower as you scroll.
+            const furtherProgress = Math.max(0, (s - stopPoint) / 1200);
+
+            // Horizontal stays at target, Vertical increases significantly (650 + 1200)
+            const x = progress * 400;
+            const y = (progress * 650) + (furtherProgress * 1200);
+
             const scale = 1 - (progress * 0.4);
+            const rotateZ = 8 - (progress * 8);
 
-            // Starts at 8 degrees, ends at 0 (straight)
-            const rotate = 8 - (progress * 8);
+            // Flip rotation (up to 180 degrees)
+            const flipY = Math.min(furtherProgress * 400, 180);
 
-            box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotate}deg)`;
+            // Apply movement to main box
+            box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotateZ}deg)`;
+
+            // Apply flip to inner face
+            inner.style.transform = `rotateY(${flipY}deg)`;
         });
     </script>
 
