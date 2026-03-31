@@ -211,11 +211,11 @@
         }
 
         #about-section {
-            /* background: #f3f3f3; */
             padding: 100px 70px;
         }
 
         .about-small {
+            font-size: 28px;
             color: #777;
             margin-bottom: 20px;
         }
@@ -227,6 +227,7 @@
         }
 
         .orange {
+            font-size: 28px;
             color: #f38d31;
         }
 
@@ -234,10 +235,11 @@
             margin-left: 70px;
             margin-top: 15px;
             color: #777;
-            font-size: 18px;
+            font-size: 23px;
         }
 
         .about-desc {
+            font-size: 20px;
             margin-left: 70px;
             margin-top: 20px;
             max-width: 700px;
@@ -283,25 +285,11 @@
             color: #f38d31;
         }
 
-        .trust {
-            margin-left: 70px;
-            margin-top: 10px;
-            font-size: 20px;
-        }
-
-        .social {
-            margin-left: 70px;
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-        }
-
+    
         /* REVEAL SECTION STYLES */
         .reveal-container {
             padding: 150px 70px;
-            /* background: #eaeaea; */
             min-height: 51vh;
-            /* Gives room for the scroll effect to work */
         }
 
         .reveal-text {
@@ -310,7 +298,6 @@
             font-weight: 600;
             font-family: 'Segoe UI', sans-serif;
             color: rgba(0, 0, 0, 0.1);
-            /* Light gray base */
         }
 
         .reveal-text span {
@@ -319,10 +306,9 @@
 
         .reveal-text span.active {
             color: #000;
-            /* Letter becomes black */
         }
 
-        /* PROJECTS SECTION - POST REVEAL */
+        /* PROJECTS SECTION */
         #projects-section {
             margin-left: 200px;
             margin-right: 200px;
@@ -354,10 +340,6 @@
             transition: background 0.3s;
         }
 
-        .projects-btn:hover {
-            background: #d0d0d0;
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -367,17 +349,11 @@
         .project-card {
             background: #dcdcdc;
             border-radius: 50px;
-            /* Large rounded corners from image */
             padding: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 20px rgba(236, 226, 226, 0.03);
             transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        .project-card:hover {
-            transform: scale(1.02);
         }
 
         .project-card img {
@@ -387,9 +363,231 @@
             transition: filter 0.3s;
         }
 
-        .project-card:hover img {
-            filter: grayscale(0%);
+        /* --- JOURNEY SECTION - PERMANENT ORANGE --- */
+        #journey-section {
+            margin-top: 100px;
+            margin-right: 40px;
+            margin-left: 40px;
+             margin-bottom: 100px;
+            padding: 120px 20px;
+            background: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+            overflow: hidden;
         }
+
+        .journey-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .journey-header h2{
+            font-size: 30px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* The central line is now permanently orange */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #f38d31; /* Always Orange */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 1; /* Always visible */
+            transform: translateY(0); /* No scroll movement */
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Dots are now permanently orange */
+        .circle {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #f38d31; /* Always Orange */
+            border: 2px solid #f38d31;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 10px rgba(243, 141, 49, 0.4);
+        }
+
+        .left .circle { right: -8px; }
+        .right .circle { left: -8px; }
+
+        .timeline-item .content {
+             background: white;
+            padding: 20px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .timeline-item:hover .content {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* CONTACT SECTION */
+       #contact-section {
+            margin-right: 40px;
+            margin-left: 40px;
+            background-color: #333333;
+            color: white;
+            padding: 100px 70px 40px 70px;
+            border-radius: 60px 60px 0 0;
+            margin-top: 100px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2 {
+            font-size: 64px;
+            font-family: Georgia, serif;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+
+        .contact-info p {
+            color: #aaa;
+            font-size: 18px;
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-details li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .contact-details i {
+            color: #f38d31;
+            font-size: 20px;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            margin-left: 20px;
+            margin-right: 20px;
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #f38d31;
+        }
+
+        .submit-btn {
+            background: #f38d31;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff9d47;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f38d31;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            #contact-section { padding: 60px 30px; }
+            .contact-info h2 { font-size: 40px; }
+        }
+
     </style>
 </head>
 
@@ -400,8 +598,8 @@
         <a href="#skills-container">Skills</a>
         <a href="#about-section">About</a>
         <a href="#projects-section">Portfolio</a>
-        <a href="">Reviews</a>
-        <a href="" class="contact">Contact me</a>
+        <a href="#journey-section">Journey</a>
+        <a href="#contact-section" class="contact">Contact me</a>
     </nav>
 
     <div id="hero">
@@ -443,8 +641,7 @@
         </div>
         <div class="card">
             <h3>2.CSS & Layout Techniques</h3>
-            <p>I use modern CSS methods like Flexbox and Grid to create responsive, flexible, and visually consistent
-                layouts.</p>
+            <p>I use modern CSS methods like Flexbox and Grid to create responsive, flexible, and visually consistent layouts.</p>
         </div>
         <div class="card">
             <h3>3.JavaScript & DOM Manipulation</h3>
@@ -477,7 +674,6 @@
             <button class="outline-btn">Download CV</button>
         </div>
         <div class="stars">★★★★★</div>
-        <div class="trust">Built 5+ projects</div>
     </div>
 
     <div class="reveal-container">
@@ -493,19 +689,102 @@
             <div>
                 <div style="color: #777; margin-bottom: 10px; font-weight: 500;">/ Portfolio Projects</div>
                 <h2>Selected <span class="orange">Work Samples</span></h2>
-                <p style="color: #666; max-width: 500px; line-height: 1.6;">A carefully picked showcase of projects that
-                    highlight my commitment to this design industry.</p>
+                <p style="color: #666; max-width: 500px; line-height: 1.6;">A carefully picked showcase of projects that highlight my commitment to this design industry.</p>
             </div>
             <button class="projects-btn">Complete Portfolio <i class="fa-solid fa-angles-right"></i></button>
         </div>
 
         <div class="projects-grid">
-            <div class="project-card"><img src="project3.png" alt="Work Sample"></div>
-            <div class="project-card"><img src="project2.png" alt="Work Sample"></div>
-            <div class="project-card"><img src="project1.png" alt="Work Sample"></div>
-            <div class="project-card"><img src="project4.png" alt="Work Sample"></div>
+            <div class="project-card"><img src="img3.png" alt="Work Sample"></div>
+            <div class="project-card"><img src="img2.png" alt="Work Sample"></div>
+            <div class="project-card"><img src="img1.png" alt="Work Sample"></div>
+            <div class="project-card"><img src="img4.png" alt="Work Sample"></div>
         </div>
     </div>
+
+    <div id="journey-section">
+        <div class="journey-header">
+            <div style="color: #f38d31; font-size: 38px; margin-bottom: 10px;">/ My Journey</div>
+            <h2>Learning & <span class="orange">Growth</span></h2>
+            <p>My journey of learning and improving step by step.</p>
+        </div>
+
+        <div class="timeline" id="mainTimeline">
+            <div class="timeline-item left">
+                <div class="circle"></div>
+                <div class="content">
+                    <h3>Started Web Development</h3>
+                    <p>I started learning HTML and CSS and created simple websites.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="circle"></div>
+                <div class="content">
+                    <h3>JavaScript & Projects</h3>
+                    <p>I learned JavaScript and built small interactive projects.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="circle"></div>
+                <div class="content">
+                    <h3>Java Full Stack Learning</h3>
+                    <p>I am learning backend development and full stack concepts.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="circle"></div>
+                <div class="content">
+                    <h3>Building Portfolio</h3>
+                    <p>I created projects and built my personal portfolio website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div style="color: #f38d31; font-weight: 600; margin-bottom: 10px;">/ GET IN TOUCH</div>
+                <h2>Let’s create something <span class="orange">great</span> together.</h2>
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+
+                <ul class="contact-details">
+                    <li><i class="fa-solid fa-envelope"></i> swedha2908@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</li>
+                </ul>
+
+                <div class="social-links" style="margin-top: 30px;">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Swedha S. All rights reserved.</p>
+            <p>Designed with <i class="fa-solid fa-heart" style="color: #f38d31;"></i> by Swedha</p>
+        </div>
+    </footer>
 
     <script>
         const box = document.getElementById("box");
@@ -513,7 +792,7 @@
         const revealContainer = document.querySelector(".reveal-container");
         const revealText = document.getElementById("revealText");
 
-        // PRE-PROCESS REVEAL TEXT: Wrap each letter in a span
+        // PRE-PROCESS REVEAL TEXT
         const originalText = revealText.textContent.trim();
         revealText.innerHTML = originalText.split("").map(char => `<span>${char}</span>`).join("");
         const characters = revealText.querySelectorAll("span");
@@ -522,16 +801,14 @@
             const s = window.scrollY;
             const stopPoint = 600;
 
-            // --- PROFILE BOX ANIMATION ---
+            // PROFILE BOX ANIMATION
             const progress = Math.min(s / stopPoint, 1);
             const furtherProgress = Math.max(0, (s - stopPoint) / 1200);
-
             const revealTop = revealContainer.offsetTop;
             const maxTravelY = revealTop - (window.innerHeight / 2) - 250;
 
             const x = progress * 400;
             const y = Math.min((progress * 650) + (furtherProgress * 1200), maxTravelY);
-
             const scale = 1 - (progress * 0.4);
             const rotateZ = 8 - (progress * 8);
             const flipY = Math.min(furtherProgress * 400, 180);
@@ -539,28 +816,19 @@
             box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotateZ}deg)`;
             inner.style.transform = `rotateY(${flipY}deg)`;
 
-            // --- LETTER-BY-LETTER REVEAL LOGIC ---
-            // Starts the reveal when the section is 200px from the top of the screen
+            // TEXT REVEAL LOGIC
             const containerStart = revealTop - 500;
             const containerRange = revealContainer.offsetHeight;
-
-            // Calculate percentage (0 to 1) based on the section's position
             let revealPercent = (s - containerStart) / (containerRange * 0.7);
             revealPercent = Math.max(0, Math.min(1, revealPercent));
 
-            const totalChars = characters.length;
-            const charsToHighlight = Math.floor(revealPercent * totalChars);
-
+            const charsToHighlight = Math.floor(revealPercent * characters.length);
             characters.forEach((char, index) => {
-                if (index < charsToHighlight) {
-                    char.classList.add("active");
-                } else {
-                    char.classList.remove("active");
-                }
+                if (index < charsToHighlight) char.classList.add("active");
+                else char.classList.remove("active");
             });
         });
     </script>
 
 </body>
-
 </html>
