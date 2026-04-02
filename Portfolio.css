@@ -583,7 +583,7 @@
 
  /* 📱 MOBILE VIEW (PHONE) */
 /* 📱 MOBILE VIEW (PHONE) - OPTIMIZED */
-@media (max-width: 768px) {
+@media (max-width: 550px) {
     body {
         overflow-x: hidden;
         width: 100%;
