@@ -583,6 +583,9 @@
 
  /* 📱 MOBILE VIEW (PHONE) */
 /* ================= PERFECT MOBILE RESPONSIVE ================= */
+body{
+    overflow-x: hidden;
+}
 * {
     box-sizing: border-box;
 }
