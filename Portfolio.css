@@ -155,7 +155,7 @@
      border-radius: 30px;
      padding: 40px;
      margin-bottom: 50px;
-     height: 230px;
+     height: auto;
      width: 300px;
      display: flex;
      flex-direction: column;
@@ -165,7 +165,7 @@
  }
 
  .card h3 {
-     font-size: 32px;
+     font-size: 27px;
      margin: 0;
      color: black;
  }
@@ -599,29 +599,23 @@
     }
 
     /* ================= NAVBAR ================= */
-   nav {
+    nav {
         position: fixed;
         bottom: 15px;
-
         left: 50%;
         transform: translateX(-50%);
-
-        width: max-content;   /* 🔥 KEY FIX */
-        max-width: 95%;
-
-        padding: 8px 14px;
-        gap: 12px;
-
-        display: flex;
+        max-width: 90%;
+        width: auto;
+        padding: 8px 12px;
+        gap: 10px;
         justify-content: center;
-
         overflow-x: auto;
-        white-space: nowrap;
+        border-radius: 40px;
     }
 
     nav a {
         font-size: 12px;
-        flex-shrink: 0;
+        white-space: nowrap;
     }
 
     .contact {
@@ -758,56 +752,47 @@
     }
 
     /* ================= CONTACT ================= */
-   @media (max-width: 768px) {
-
     #contact-section {
-        margin: 10px;
-        padding: 40px 15px;
-        border-radius: 25px;
+        margin: 20px;
+        padding: 50px 20px;
+        border-radius: 30px;
     }
 
     .contact-container {
         flex-direction: column;
-        width: 100%;
-        gap: 20px;
+        align-items: center;
+        gap: 30px;
     }
 
-    .contact-info,
+    .contact-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+        margin: 0 auto 20px;
+    }
+
+    .contact-details li {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
     .contact-form {
         width: 100%;
         margin: 0;
         padding: 20px;
     }
-
-    .contact-info h2 {
-        font-size: 28px;
-        line-height: 1.2;
-        word-break: break-word;   /* 🔥 important */
-    }
-
-    .contact-info p {
-        font-size: 15px;
-    }
-
-    .contact-details li {
-        font-size: 14px;
-        flex-wrap: wrap;          /* 🔥 prevents overflow */
-    }
-
-    .contact-details {
-        padding: 0;
-    }
-
-    .social-links {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-    /* .contact-form {
-        width: 100%;
-        margin: 0;
-        padding: 20px;
-    } */
 
     /* ================= FOOTER ================= */
     .footer-bottom {
