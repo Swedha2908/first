@@ -582,194 +582,167 @@
  }
 
  /* 📱 MOBILE VIEW (PHONE) */
-/* 📱 MOBILE VIEW (PHONE) - OPTIMIZED */
-@media (max-width: 550px) {
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
 
-    /* NAVIGATION - Centered and visible */
+    /* NAV */
     nav {
-        bottom: 20px;
-        width: 90%;
-        max-width: 400px;
-        padding: 10px;
-        gap: 8px;
-        justify-content: center;
-        z-index: 9999;
+        bottom: 15px;
+        padding: 8px 12px;
+        gap: 10px;
     }
 
     nav a {
-        font-size: 11px;
-        white-space: nowrap;
+        font-size: 12px;
     }
 
     .contact {
         padding: 6px 12px;
     }
 
-    /* HERO SECTION - Resizing the 3D Box */
+    /* HERO */
     h1 {
-        font-size: 42px;
-        text-align: center;
-        line-height: 1.1;
-    }
-
-    .top {
-        width: 90%;
-        top: 10%;
-        flex-direction: column;
-        align-items: center;
+        font-size: 36px;
         text-align: center;
     }
 
     .row {
+        flex-direction: column;
         gap: 20px;
     }
 
-    #box {
-        width: 260px; /* Scaled down for mobile */
-        height: 380px;
-        perspective: 1000px;
+    .top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
     }
 
-    /* SKILLS SECTION - Fixing the Sticky Cards */
+    #box {
+        width: 220px;
+        height: 320px;
+    }
+
+    /* SKILLS */
     #skills-container {
         padding: 60px 20px;
-        border-radius: 30px 30px 0 0;
     }
 
     .intro-text {
         margin-left: 0;
         text-align: center;
-        margin-bottom: 40px;
     }
 
     .intro-text h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .card {
         margin-left: 0;
         width: 100%;
-        box-sizing: border-box;
-        position: relative; /* Disabling sticky on mobile for better UX */
-        top: 0 !important; 
         height: auto;
-        margin-bottom: 20px;
-        padding: 30px;
+        padding: 20px;
     }
 
-    /* ABOUT SECTION - Removing the 70px offsets */
+    /* ABOUT */
     #about-section {
         padding: 60px 20px;
     }
 
-    .about-section h2, .about-sub, .about-desc, .about-last, .stars {
+    .about-section h2,
+    .about-sub,
+    .about-desc,
+    .about-last,
+    .primary-btn,
+    .outline-btn,
+    .stars {
         margin-left: 0;
-        text-align: left;
+        text-align: center;
     }
 
     .about-section h2 {
-        font-size: 38px;
+        font-size: 32px;
     }
 
-    .about-buttons {
-        margin-left: 0;
-        justify-content: flex-start;
-        gap: 10px;
+    .about-desc {
+        font-size: 16px;
     }
 
-    .primary-btn, .outline-btn {
-        margin-left: 0;
-        padding: 12px 18px;
-        font-size: 14px;
-    }
-
-    /* REVEAL SECTION */
+    /* REVEAL */
     .reveal-container {
-        padding: 60px 20px;
+        padding: 80px 20px;
     }
 
     .reveal-text {
-        font-size: 26px;
+        font-size: 24px;
     }
 
-    /* PROJECTS SECTION - Grid to Single Column */
+    /* PROJECTS */
     #projects-section {
-        margin: 40px 20px;
+        margin: 20px;
     }
 
     .projects-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
+    }
+
+    .projects-header h2 {
+        font-size: 28px;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
 
     .project-card {
         padding: 20px;
-        border-radius: 30px;
+        border-radius: 20px;
     }
 
-    /* JOURNEY SECTION - Correcting Timeline */
-    #journey-section {
-        margin: 40px 10px;
-        padding: 60px 15px;
-    }
-
+    /* TIMELINE */
     .timeline::after {
-        left: 20px; /* Moves line to the left */
+        left: 20px;
     }
 
     .timeline-item {
         width: 100%;
         padding-left: 50px;
-        padding-right: 0;
-        text-align: left;
+        padding-right: 20px;
     }
 
+    .timeline-item.left,
     .timeline-item.right {
         left: 0;
     }
 
     .circle {
-        left: 12px !important;
+        left: 10px !important;
     }
 
-    /* CONTACT SECTION - The "Disappearing" Fix */
+    /* CONTACT */
     #contact-section {
-        margin: 60px 0 0 0;
         padding: 60px 20px;
-        border-radius: 40px 40px 0 0;
-        width: 100%;
-        box-sizing: border-box;
+        border-radius: 30px 30px 0 0;
     }
 
     .contact-container {
         flex-direction: column;
-        gap: 40px;
     }
 
     .contact-info h2 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .contact-form {
-        margin: 0;
-        padding: 25px;
-        width: 100%;
-        box-sizing: border-box;
+        padding: 20px;
     }
 
+    /* FOOTER */
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         text-align: center;
     }
 }
