@@ -582,28 +582,58 @@
  }
 
  /* 📱 MOBILE VIEW (PHONE) */
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= PERFECT MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
 
-    /* NAV */
+    /* GLOBAL FIX */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
     nav {
+        position: fixed;
         bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        width: auto;
         padding: 8px 12px;
         gap: 10px;
+        justify-content: center;
+        overflow-x: auto;
+        border-radius: 40px;
     }
 
     nav a {
         font-size: 12px;
+        white-space: nowrap;
     }
 
     .contact {
         padding: 6px 12px;
     }
 
-    /* HERO */
-    h1 {
-        font-size: 36px;
+    /* ================= HERO ================= */
+    #hero {
+        padding: 20px;
         text-align: center;
+    }
+
+    h1 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .top {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .row {
@@ -611,25 +641,18 @@
         gap: 20px;
     }
 
-    .top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
     #box {
         width: 220px;
         height: 320px;
     }
 
-    /* SKILLS */
+    /* ================= SKILLS ================= */
     #skills-container {
         padding: 60px 20px;
     }
 
     .intro-text {
-        margin-left: 0;
+        margin: 0;
         text-align: center;
     }
 
@@ -638,25 +661,16 @@
     }
 
     .card {
-        margin-left: 0;
+        margin: 0;
         width: 100%;
         height: auto;
         padding: 20px;
+        border-radius: 20px;
     }
 
-    /* ABOUT */
+    /* ================= ABOUT ================= */
     #about-section {
         padding: 60px 20px;
-    }
-
-    .about-section h2,
-    .about-sub,
-    .about-desc,
-    .about-last,
-    .primary-btn,
-    .outline-btn,
-    .stars {
-        margin-left: 0;
         text-align: center;
     }
 
@@ -664,11 +678,24 @@
         font-size: 32px;
     }
 
+    .about-sub,
+    .about-desc,
+    .about-last,
+    .primary-btn,
+    .outline-btn,
+    .stars {
+        margin-left: 0;
+    }
+
     .about-desc {
         font-size: 16px;
     }
 
-    /* REVEAL */
+    .about-buttons {
+        justify-content: center;
+    }
+
+    /* ================= REVEAL ================= */
     .reveal-container {
         padding: 80px 20px;
     }
@@ -677,7 +704,7 @@
         font-size: 24px;
     }
 
-    /* PROJECTS */
+    /* ================= PROJECTS ================= */
     #projects-section {
         margin: 20px;
     }
@@ -701,7 +728,7 @@
         border-radius: 20px;
     }
 
-    /* TIMELINE */
+    /* ================= TIMELINE ================= */
     .timeline::after {
         left: 20px;
     }
@@ -721,28 +748,53 @@
         left: 10px !important;
     }
 
-    /* CONTACT */
+    /* ================= CONTACT ================= */
     #contact-section {
-        padding: 60px 20px;
-        border-radius: 30px 30px 0 0;
+        margin: 20px;
+        padding: 50px 20px;
+        border-radius: 30px;
     }
 
     .contact-container {
         flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center;
     }
 
     .contact-info h2 {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+        margin: 0 auto 20px;
+    }
+
+    .contact-details li {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 
     .contact-form {
+        width: 100%;
+        margin: 0;
         padding: 20px;
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
     .footer-bottom {
         flex-direction: column;
-        gap: 10px;
         text-align: center;
+        gap: 10px;
     }
 }
