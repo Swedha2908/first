@@ -599,23 +599,29 @@
     }
 
     /* ================= NAVBAR ================= */
-    nav {
+   nav {
         position: fixed;
         bottom: 15px;
+
         left: 50%;
         transform: translateX(-50%);
-        max-width: 90%;
-        width: auto;
-        padding: 8px 12px;
-        gap: 10px;
+
+        width: max-content;   /* 🔥 KEY FIX */
+        max-width: 95%;
+
+        padding: 8px 14px;
+        gap: 12px;
+
+        display: flex;
         justify-content: center;
+
         overflow-x: auto;
-        border-radius: 40px;
+        white-space: nowrap;
     }
 
     nav a {
         font-size: 12px;
-        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .contact {
