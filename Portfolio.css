@@ -600,15 +600,17 @@
 
     /* ================= NAVBAR ================= */
     nav {
+        box-sizing: border-box;
         position: fixed;
         bottom: 15px;
         left: 50%;
+        width:90%;
         transform: translateX(-50%);
-        max-width: 90%;
+        max-width: 350px;
         width: auto;
         padding: 8px 12px;
         gap: 10px;
-        justify-content: center;
+        justify-content: space-around;
         overflow-x: auto;
         border-radius: 40px;
     }
