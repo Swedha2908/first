@@ -227,19 +227,26 @@
             const stopPoint = 600;
 
             // PROFILE BOX ANIMATION
-            const progress = Math.min(s / stopPoint, 1);
-            const furtherProgress = Math.max(0, (s - stopPoint) / 1200);
-            const revealTop = revealContainer.offsetTop;
-            const maxTravelY = revealTop - (window.innerHeight / 2) - 250;
+            if (window.innerWidth > 768) {
+                const progress = Math.min(s / stopPoint, 1);
+                const furtherProgress = Math.max(0, (s - stopPoint) / 1200);
+                const revealTop = revealContainer.offsetTop;
+                const maxTravelY = revealTop - (window.innerHeight / 2) - 250;
 
-            const x = progress * 400;
-            const y = Math.min((progress * 650) + (furtherProgress * 1200), maxTravelY);
-            const scale = 1 - (progress * 0.4);
-            const rotateZ = 8 - (progress * 8);
-            const flipY = Math.min(furtherProgress * 400, 180);
+                const x = progress * 400;
+                const y = Math.min((progress * 650) + (furtherProgress * 1200), maxTravelY);
+                const scale = 1 - (progress * 0.4);
+                const rotateZ = 8 - (progress * 8);
+                const flipY = Math.min(furtherProgress * 400, 180);
 
-            box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotateZ}deg)`;
-            inner.style.transform = `rotateY(${flipY}deg)`;
+
+                box.style.transform = `translate(${x}px, ${y}px) scale(${scale}) rotate(${rotateZ}deg)`;
+                inner.style.transform = `rotateY(${flipY}deg)`;
+            } else {
+                // Reset styles for Mobile/Tablet so it stays in the hero section
+                box.style.transform = "none";
+                inner.style.transform = "none";
+            }
 
             // TEXT REVEAL LOGIC
             const containerStart = revealTop - 500;
